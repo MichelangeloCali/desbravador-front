@@ -9,7 +9,7 @@ type SearchFormProps = {
 };
 
 export const SearchForm = ({ register, errors }: SearchFormProps) => (
-  <div className="flex flex-col gap-10">
+  <div className="flex flex-col gap-10 items-center">
     <h1 className="text-2xl font-light text-silver-400">
       Vamos procurar um Usuário no Github?
     </h1>
@@ -20,7 +20,7 @@ export const SearchForm = ({ register, errors }: SearchFormProps) => (
         error={!!errors.username}
         helperText={errors.username?.message}
         variant="outlined"
-        className="md:w-96 w-72"
+        className="w-96"
         label="Pesquise um Usuário"
         slotProps={{
           input: {

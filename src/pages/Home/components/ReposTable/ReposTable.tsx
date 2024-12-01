@@ -23,7 +23,7 @@ export const ReposTable = ({ repos }: RepoTableProps) => {
     useRepoSorting(repos);
 
   return (
-    <div className="flex flex-col h-[600px] overflow-auto scrollbar-hide pr-3">
+    <div className="flex flex-col h-[600px] overflow-auto scrollbar-hide pr-3 w-[400px] sm:w-[580px] md:w-[780px] lg:w-full overflow-x-auto">
       <div className="flex self-end">
         <IconButton onClick={handleClick} color="primary">
           <Typography color="primary">Filtros</Typography>
@@ -66,17 +66,25 @@ export const ReposTable = ({ repos }: RepoTableProps) => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>
-                <Typography color="secondary">Nome</Typography>
+              <TableCell className="w-1/4 lg:w-1/5">
+                <Typography color="secondary" variant="subtitle2">
+                  Nome
+                </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="secondary">Descrição</Typography>
+                <Typography color="secondary" variant="subtitle2">
+                  Descrição
+                </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="secondary">Star Count</Typography>
+                <Typography color="secondary" variant="subtitle2">
+                  Star Count
+                </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="secondary">Forks</Typography>
+                <Typography color="secondary" variant="subtitle2">
+                  Forks
+                </Typography>
               </TableCell>
             </TableRow>
           </TableHead>
@@ -84,18 +92,24 @@ export const ReposTable = ({ repos }: RepoTableProps) => {
             {sortedRepos?.map((repo) => (
               <TableRow key={repo.id}>
                 <TableCell>
-                  <Typography color="primary">{repo.name}</Typography>
+                  <Typography color="primary" variant="subtitle2">
+                    {repo.name}
+                  </Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography color="primary">
+                  <Typography color="primary" variant="subtitle2">
                     {repo.description || 'Sem descrição'}
                   </Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography color="primary">{repo.stargazers_count}</Typography>
+                  <Typography color="primary" variant="subtitle2">
+                    {repo.stargazers_count}
+                  </Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography color="primary">{repo.forks_count}</Typography>
+                  <Typography color="primary" variant="subtitle2">
+                    {repo.forks_count}
+                  </Typography>
                 </TableCell>
               </TableRow>
             ))}

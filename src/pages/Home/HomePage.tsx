@@ -61,8 +61,8 @@ export const HomePage = () => {
   }, [username, isValid, debouncedRefetch]);
 
   return (
-    <div className="flex items-center max-w-7xl w-full gap-10">
-      <div className="flex flex-col self-start gap-10">
+    <div className="flex flex-col xl:flex-row items-center max-w-7xl w-full gap-10">
+      <div className="flex flex-col items-center xl:self-start gap-10">
         <SearchForm register={register} errors={errors} />
 
         {isLoadingBoth ? (

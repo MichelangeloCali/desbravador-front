@@ -28,12 +28,12 @@ export const UserInfo = ({ isError, hasUser, data }: UserInfoProps) => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 mt-4 md:w-96 w-72">
+    <div className="flex flex-col items-center justify-center gap-4 mt-4 sm:w-96 w-72">
       <div className="flex flex-col items-center gap-4">
         <img
           src={data?.avatar_url}
           alt="Avatar"
-          className="md:h-40 md:w-40 h-20 w-20 rounded-full"
+          className="sm:h-40 sm:w-40 h-20 w-20 rounded-full"
         />
 
         <Typography variant="h6">{data?.name || 'Nome não disponível'}</Typography>
