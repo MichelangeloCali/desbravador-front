@@ -7,8 +7,6 @@ type AuthProviderProps = {
 };
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  console.log('AUTH0_DOMAIN', AUTH0_DOMAIN);
-  console.log('AUTH0_CLIENT_ID', AUTH0_CLIENT_ID);
   return (
     <Auth0Provider
       domain={AUTH0_DOMAIN}
