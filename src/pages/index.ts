@@ -1,5 +1,5 @@
-import { HomePage } from './Home'
-import { LoginPage } from './Login'
-import { ProfilePage } from './Profile'
+import { HomePage } from './Home';
+import { LoginPage } from './Login';
+import { ProfilePage } from './Profile';
 
-export { HomePage, LoginPage, ProfilePage }
+export { HomePage, LoginPage, ProfilePage };

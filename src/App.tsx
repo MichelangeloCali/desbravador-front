@@ -1,22 +1,12 @@
-import { Button } from '@mui/material'
-import { useState } from 'react'
-import './App.css'
-import viteLogo from '/vite.svg'
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { AppRoutes } from './routes/AppRoutes';
+import { AuthProvider } from './routes/AuthProvider';
 
+export const App = () => {
   return (
-    <div>
-      <a href="https://vite.dev" target="_blank">
-        <img src={viteLogo} className="logo" alt="Vite logo" />
-      </a>
-
-      <div>{count}</div>
-
-      <Button onClick={() => setCount((prev) => prev + 1)}>CLique</Button>
-    </div>
-  )
-}
-
-export default App
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
+};
