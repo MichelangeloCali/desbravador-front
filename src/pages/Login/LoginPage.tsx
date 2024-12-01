@@ -1,3 +1,4 @@
+import { RoutesEnum } from '@/enums/routes';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Button } from '@mui/material';
 import { useEffect } from 'react';
@@ -17,7 +18,7 @@ export const LoginPage = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/');
+      navigate(RoutesEnum.HOME);
     }
   }, [isAuthenticated, navigate]);
 

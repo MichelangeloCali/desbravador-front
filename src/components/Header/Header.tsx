@@ -1,3 +1,4 @@
+import { RoutesEnum } from '@/enums/routes';
 import { useAuth0 } from '@auth0/auth0-react';
 import { TextField } from '@mui/material';
 import { CircleUserRound } from 'lucide-react';
@@ -21,7 +22,7 @@ export const Header = () => {
         <nav className="flex items-center gap-3 md:gap-10 md:flex-row">
           <div>
             <NavLink
-              to="/"
+              to={RoutesEnum.HOME}
               className={({ isActive }) =>
                 `text-l flex gap-2 ${
                   isActive ? 'text-white underline' : 'text-silver-500 hover:underline'
@@ -34,7 +35,7 @@ export const Header = () => {
 
           <div>
             <NavLink
-              to="/profile"
+              to={RoutesEnum.PROFILE}
               className={({ isActive }) =>
                 `text-xl flex gap-2 ${isActive ? 'text-white' : 'text-silver-500'}`
               }
