@@ -3,14 +3,31 @@ import { createContext, ReactNode, useContext } from 'react';
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#6b7280',
-    },
-    secondary: {
-      main: '#374151',
-    },
+    primary: { main: '#f3f4f6' },
+    secondary: { main: '#9ca3af' },
+    success: { main: '#10b981' },
+    action: { disabled: '#9ca3af' },
   },
   components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          '&.Mui-disabled': {
+            backgroundColor: '#9ca3af',
+            color: '#f9fafb',
+          },
+        },
+        contained: {
+          '&:not(.Mui-disabled)': {
+            backgroundColor: '#10b981',
+            '&:hover': {
+              backgroundColor: '#059669',
+            },
+          },
+        },
+      },
+    },
     MuiTextField: {
       styleOverrides: {
         root: {
@@ -68,9 +85,7 @@ const theme = createTheme({
   },
 });
 
-type ThemeContextType = {
-  theme: typeof theme;
-};
+type ThemeContextType = { theme: typeof theme };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 

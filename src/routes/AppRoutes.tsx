@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Layout } from '@/components';
-import { RoutesEnum } from '@/enums/routes';
 import { HomePage, LoginPage, ProfilePage } from '@/pages';
+import { RoutesEnum } from '@/types/enums/routes';
 import { PrivateRoute } from './PrivateRoute';
 
 export const AppRoutes = () => {
