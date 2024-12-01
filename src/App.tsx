@@ -1,12 +1,13 @@
-import './App.css';
-
 import { AppRoutes } from './routes/AppRoutes';
 import { AuthProvider } from './routes/AuthProvider';
+import { ThemeProvider } from './theme/Theme';
 
 export const App = () => {
   return (
     <AuthProvider>
-      <AppRoutes />
+      <ThemeProvider>
+        <AppRoutes />
+      </ThemeProvider>
     </AuthProvider>
   );
 };

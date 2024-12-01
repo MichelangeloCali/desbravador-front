@@ -1,8 +1,11 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { Button } from '@mui/material';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginPage = () => {
-  const { loginWithRedirect } = useAuth0();
+  const navigate = useNavigate();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   const handleLogin = (provider: string) => {
     loginWithRedirect({
@@ -11,6 +14,12 @@ export const LoginPage = () => {
       },
     });
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/');
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <div>
