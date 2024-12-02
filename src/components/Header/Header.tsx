@@ -1,6 +1,5 @@
 import { RoutesEnum } from '@/types/enums/routes';
 import { useAuth0 } from '@auth0/auth0-react';
-import { CircleUserRound } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
@@ -35,7 +34,11 @@ export const Header = () => {
                 `text-xl flex gap-2 ${isActive ? 'text-white' : 'text-silver-500'}`
               }
             >
-              <CircleUserRound width={30} height={30} />
+              <img
+                src={user?.picture || '/social.svg'}
+                alt="user"
+                className="h-8 w-8 rounded-full"
+              />
             </NavLink>
           </div>
         </nav>
