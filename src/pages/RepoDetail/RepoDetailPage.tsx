@@ -1,15 +1,28 @@
+import { useEffect } from 'react';
+
+import { useParams } from 'react-router-dom';
+
+import { Typography } from '@mui/material';
+
 import { useRepoDetail } from '@/api/useRepoDetail';
 import { Loader } from '@/components';
-import { Typography } from '@mui/material';
-import { useParams } from 'react-router-dom';
 
 export const RepoDetailPage = () => {
   const { user, repoId } = useParams<{ user: string; repoId: string }>();
   const fullName = `${user}/${repoId}`;
 
-  if (!fullName) return null;
+  const { data: repo, refetch, isLoading, isError } = useRepoDetail(fullName);
 
-  const { data: repo, isLoading, isError } = useRepoDetail(fullName);
+  useEffect(() => {
+    if (fullName) {
+      const fetchData = async () => {
+        await refetch();
+      };
+      fetchData();
+    }
+  }, [fullName, refetch]);
+
+  if (!fullName) return null;
 
   if (isLoading) return <Loader />;
 

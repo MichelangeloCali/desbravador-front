@@ -1,6 +1,5 @@
-import { useRepoSorting } from '@/hooks/useReposSorting';
-import { RoutesEnum } from '@/types/enums/routes';
-import { Repo } from '@/types/models/Repos';
+import { Link } from 'react-router-dom';
+
 import {
   IconButton,
   Menu,
@@ -13,16 +12,24 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
+
 import { Calendar, ChevronDown, GitFork, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
+import { useRepoSorting } from '@/hooks/useReposSorting';
+import { RoutesEnum } from '@/types/enums/routes';
+import { Repo } from '@/types/models/Repos';
 
 type RepoTableProps = {
-  repos?: Repo[];
+  repos: Repo[] | null;
 };
 
 export const ReposTable = ({ repos }: RepoTableProps) => {
   const { sortedRepos, handleMenuItemClick, handleClick, handleClose, anchorEl, open } =
     useRepoSorting(repos);
+
+  if (!repos) {
+    return <Typography>Sem repositórios disponíveis.</Typography>;
+  }
 
   return (
     <div className="flex flex-col h-[600px] overflow-auto scrollbar-hide pr-3 w-[400px] sm:w-[580px] md:w-[780px] lg:w-full overflow-x-auto">

@@ -1,7 +1,9 @@
+import { useQuery, UseQueryOptions } from '@tanstack/react-query';
+
 import { PathsEnum } from '@/types/enums/paths';
 import { QueryKeys } from '@/types/enums/query-keys';
 import { User } from '@/types/models/User';
-import { useQuery, UseQueryOptions } from '@tanstack/react-query';
+
 import { api } from './api';
 
 type getUserParams = {

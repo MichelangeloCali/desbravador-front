@@ -1,8 +1,10 @@
+import { useQuery, UseQueryOptions } from '@tanstack/react-query';
+
 import { PathsEnum } from '@/types/enums/paths';
 import { QueryKeys } from '@/types/enums/query-keys';
 
 import { Repo } from '@/types/models/Repos';
-import { useQuery, UseQueryOptions } from '@tanstack/react-query';
+
 import { api } from './api';
 
 type GetReposParams = {

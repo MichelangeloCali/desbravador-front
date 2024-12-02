@@ -1,6 +1,8 @@
-import { AUTH0_CLIENT_ID, AUTH0_DOMAIN } from '@/config/environments';
-import { Auth0Provider } from '@auth0/auth0-react';
 import { ReactElement } from 'react';
+
+import { Auth0Provider } from '@auth0/auth0-react';
+
+import { AUTH0_CLIENT_ID, AUTH0_DOMAIN } from '@/config/environments';
 
 type AuthProviderProps = {
   children: ReactElement;

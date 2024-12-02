@@ -1,11 +1,12 @@
-import { User } from '@/types/models/User';
 import { Typography } from '@mui/material';
 import { UserIcon } from 'lucide-react';
+
+import { User } from '@/types/models/User';
 
 type UserInfoProps = {
   isError: boolean;
   hasUser: boolean;
-  data?: User;
+  data: User | null;
 };
 
 export const UserInfo = ({ isError, hasUser, data }: UserInfoProps) => {

@@ -1,7 +1,6 @@
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
-import { createContext, ReactNode, useContext } from 'react';
+import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: { main: '#f3f4f6' },
     secondary: { main: '#9ca3af' },
@@ -84,23 +83,3 @@ const theme = createTheme({
     },
   },
 });
-
-type ThemeContextType = { theme: typeof theme };
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  return (
-    <ThemeContext.Provider value={{ theme }}>
-      <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
-    </ThemeContext.Provider>
-  );
-};
-
-export const useThemeContext = (): ThemeContextType => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useThemeContext must be used within a ThemeProvider');
-  }
-  return context;
-};

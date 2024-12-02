@@ -1,5 +1,6 @@
-import { Repo } from '@/types/models/Repos';
 import { useState } from 'react';
+
+import { Repo } from '@/types/models/Repos';
 
 type UseRepoSortingResult = {
   sortedRepos: Repo[];
@@ -12,7 +13,7 @@ type UseRepoSortingResult = {
   anchorEl: null | HTMLElement;
 };
 
-export const useRepoSorting = (repos?: Repo[]): UseRepoSortingResult => {
+export const useRepoSorting = (repos?: Repo[] | null): UseRepoSortingResult => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [sortBy, setSortBy] = useState<'stars' | 'date' | 'forks' | 'name'>('stars');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');

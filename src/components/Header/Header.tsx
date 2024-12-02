@@ -1,6 +1,8 @@
-import { RoutesEnum } from '@/types/enums/routes';
-import { useAuth0 } from '@auth0/auth0-react';
 import { NavLink } from 'react-router-dom';
+
+import { useAuth0 } from '@auth0/auth0-react';
+
+import { RoutesEnum } from '@/types/enums/routes';
 
 export const Header = () => {
   const { user } = useAuth0();

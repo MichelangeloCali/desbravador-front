@@ -1,6 +1,8 @@
+import { UseFormRegister } from 'react-hook-form';
+
 import { InputAdornment, TextField } from '@mui/material';
 import { Search } from 'lucide-react';
-import { UseFormRegister } from 'react-hook-form';
+
 import { SearchFormData } from '../../utils/schema';
 
 type SearchFormProps = {

@@ -1,5 +1,6 @@
-import { BASE_URL, GITHUB_TOKEN } from '@/config/environments';
 import axios from 'axios';
+
+import { BASE_URL, GITHUB_TOKEN } from '@/config/environments';
 
 export const api = axios.create({
   baseURL: BASE_URL,
