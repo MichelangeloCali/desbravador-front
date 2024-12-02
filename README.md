@@ -1,6 +1,6 @@
 # App Frontend
 
-README do projeto. Link de Produção você pode acessar aqui [aqui](https://desbravador-l7lz5qoa6-michelangelocalis-projects.vercel.app/login)
+README do projeto. Link de Produção você pode acessar aqui [aqui](https://desbravador-l7lz5qoa6-michelangelocalis-projects.vercel.app)
 
 
 ## O projeto foi desenvolvido com as seguintes stacks
