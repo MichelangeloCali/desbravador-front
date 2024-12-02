@@ -1,4 +1,5 @@
 import { useRepoSorting } from '@/hooks/useReposSorting';
+import { RoutesEnum } from '@/types/enums/routes';
 import { Repo } from '@/types/models/Repos';
 import {
   IconButton,
@@ -13,6 +14,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Calendar, ChevronDown, GitFork, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 type RepoTableProps = {
   repos?: Repo[];
@@ -86,6 +88,11 @@ export const ReposTable = ({ repos }: RepoTableProps) => {
                   Forks
                 </Typography>
               </TableCell>
+              <TableCell>
+                <Typography color="secondary" variant="subtitle2">
+                  Link
+                </Typography>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -109,6 +116,16 @@ export const ReposTable = ({ repos }: RepoTableProps) => {
                 <TableCell>
                   <Typography color="primary" variant="subtitle2">
                     {repo.forks_count}
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  <Typography color="primary" variant="subtitle2">
+                    <Link
+                      to={`${RoutesEnum.REPOS}/${repo.full_name}`}
+                      className="text-info hover:underline flex items-center"
+                    >
+                      Acessar
+                    </Link>
                   </Typography>
                 </TableCell>
               </TableRow>

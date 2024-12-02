@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Layout } from '@/components';
-import { HomePage, LoginPage, ProfilePage } from '@/pages';
+import { HomePage, LoginPage, ProfilePage, RepoDetailPage } from '@/pages';
 import { RoutesEnum } from '@/types/enums/routes';
 import { PrivateRoute } from './PrivateRoute';
 
@@ -26,6 +26,15 @@ export const AppRoutes = () => {
             element={
               <PrivateRoute>
                 <ProfilePage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path={`${RoutesEnum.REPOS}${RoutesEnum.REPO_DETAIL}`}
+            element={
+              <PrivateRoute>
+                <RepoDetailPage />
               </PrivateRoute>
             }
           />
