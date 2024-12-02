@@ -5,6 +5,7 @@ export const ProfilePage = () => {
   const { user, logout, isAuthenticated } = useAuth0();
 
   const handleLogout = () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
     logout({ returnTo: window.location.origin });
   };

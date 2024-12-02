@@ -7,7 +7,6 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default [
-  // Adicionando as configurações recomendadas do ESLint e TypeScript
   js.configs.recommended,
   ...tseslint.configs.recommended,
 
