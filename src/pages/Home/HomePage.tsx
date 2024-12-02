@@ -11,13 +11,17 @@ import { UserInfo, UserInfoSkeleton } from './components/UserInfo';
 import { SearchFormData, searchSchema } from './utils/schema';
 
 export const HomePage = () => {
+  const savedUsername = sessionStorage.getItem('username') || '';
+
   const {
     register,
     watch,
+    setValue,
     formState: { errors, isValid },
   } = useForm<SearchFormData>({
     resolver: zodResolver(searchSchema),
     mode: 'onChange',
+    defaultValues: { username: savedUsername },
   });
 
   const username = watch('username');
@@ -56,6 +60,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     if (isValid && username) {
+      sessionStorage.setItem('username', username);
       debouncedRefetch();
     }
   }, [username, isValid, debouncedRefetch]);
